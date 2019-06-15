@@ -16,10 +16,12 @@ public class Main {
         System.out.println("В функцию передается 7 параметров: " + a + " и " + b + " и " + с + " и " + d + " и " + e + " и " + f  + " и " + g );
     }
 
-    public static void funcCountRun(int sunday, int monday, int tuesday, int wednesday, int thursday, int friday, int saturday) {
-        final int dayInWeek = 7;
-        int summ = sunday + monday + tuesday + wednesday + thursday + friday + saturday;
-        System.out.println("За неделю пройдено: " + summ + " км");
+    public static void funcCountRun(int January, int February, int March, int April, int May, int June, int July, int August, int September, int October, int
+            November, int December) {
+        final int monthsayear = 12;
+        int summ =January + February + March + April + May + June + July + August + September + October +
+        November + December;
+        System.out.println("Всего дней в году: " + summ + " дней");
     }
 
     public static int funcWithOneParam(int a, int b) {
@@ -98,14 +100,6 @@ public class Main {
 
 
 
-    // Home work:
-    // Cerate sub method
-    // Create mult method
-    // void and int
-
-
-
-
     public static void main(String[] args) {
         wart(1);
         summ(50,10);
@@ -134,7 +128,7 @@ public class Main {
         funcWithOneParam(1);
         funcWithTwoParam(1, 2);
         funcWithSevenParam(1, 2, 3, 4, 5, 6, 7);
-        funcCountRun(0, 2, 1, 3, 1, 4, 0);
+        funcCountRun(31,28,31,30,31,30,31,31,30,31,30,31);
         funcWithOneParam(1, 2);
 
     }
