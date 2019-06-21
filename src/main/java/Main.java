@@ -7,7 +7,7 @@ public class Main {
     }
 
     public static void funcWithOneParam(int a) {
-        System.out.println("В функцию передается 1 параметр: " +  a);
+        System.out.println("В функцию передается 1 параметр: " + a);
     }
 
     public static void funcWithTwoParam(int firstDigit, int secondDigit) {
@@ -15,15 +15,39 @@ public class Main {
     }
 
     public static void funcWithSevenParam(int a, int b, int с, int d, int e, int f, int g) {
-        System.out.println("В функцию передается 7 параметров: " + a + " и " + b + " и " + с + " и " + d + " и " + e + " и " + f  + " и " + g );
+        System.out.println("В функцию передается 7 параметров: " + a + " и " + b + " и " + с + " и " + d + " и " + e + " и " + f + " и " + g);
     }
 
     public static void countDayInYear(int January, int February, int March, int April, int May, int June, int July, int August, int September, int October, int
             November, int December) {
         final int monthsayear = 12;
         int summ = January + February + March + April + May + June + July + August + September + October +
-        November + December;
+                November + December;
         System.out.println("Всего дней в году: " + summ + " дней");
+    }
+
+    public static void countDayInSpring(int March, int April, int May) {
+        final int monthaSpring = 3;
+        int summ = March + April + May;
+        System.out.println("Всего дней весной: " + summ + " дней");
+    }
+
+    public static void countDayInSummer(int June, int July, int August) {
+        final int monthaSummer = 3;
+        int summ =  June + July + August ;
+        System.out.println("Всего дней летом: " + summ + " дней");
+    }
+
+    public static void countDayInAutumn(int September, int October, int November) {
+        final int monthaAutumn = 3;
+        int summ = September + October + November;
+        System.out.println("Всего дней осенью: " + summ + " дней");
+    }
+
+    public static void countDayInWinter(int December,int January, int February ) {
+        final int monthawinter = 3;
+        int summ = December + January + February ;
+        System.out.println("Всего дней зимой: " + summ + " дней");
     }
 
     public static int funcWithOneParam(int a, int b) {
@@ -143,6 +167,24 @@ public class Main {
 //        increment(5);
 
 
+
+
+        System.out.println("Какой период времени использовать для расчета? (Spring/Summer/Autumn/Winter):");
+        Scanner b  = new Scanner(System.in);
+        String Nemezes = b.nextLine();
+        b.close();
+
+        if(Nemezes.equalsIgnoreCase("Spring")) {
+            countDayInSpring(31,30,31);
+        } else if(Nemezes.equalsIgnoreCase("Summer")) {
+            countDayInSummer(30,31,31);
+        } else if(Nemezes.equalsIgnoreCase("Autumn")) {
+            countDayInAutumn(30,31,30);
+        } else if(Nemezes.equalsIgnoreCase("Winter")) {
+            countDayInWinter(31,31,28);
+        }
+
+
         System.out.println("Год высокосный? (YES/NO):");
 
         Scanner in = new Scanner(System.in);
@@ -154,8 +196,6 @@ public class Main {
         } else if(ansver.equalsIgnoreCase("YES")) {
             countDayInYear(31,29,31,30,31,30,31,31,30,31,30,31);
         } else System.out.println("Неверный ответ!");
-
-
 
 
 
