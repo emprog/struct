@@ -169,10 +169,9 @@ public class Main {
 
 
 
-        System.out.println("Какой период времени использовать для расчета? (Spring/Summer/Autumn/Winter):");
+        System.out.println("Какой период времени использовать для расчета? (Spring/Summer/Autumn/Winter/Year):");
         Scanner b  = new Scanner(System.in);
         String Nemezes = b.nextLine();
-        b.close();
 
         if(Nemezes.equalsIgnoreCase("Spring")) {
             countDayInSpring(31,30,31);
@@ -186,10 +185,8 @@ public class Main {
 
 
         System.out.println("Год высокосный? (YES/NO):");
-
-        Scanner in = new Scanner(System.in);
-        String ansver = in.nextLine();
-        in.close();
+        String ansver = b.nextLine();
+        b.close();
 
         if(ansver.equalsIgnoreCase("NO")) {
             countDayInYear(31,28,31,30,31,30,31,31,30,31,30,31);
