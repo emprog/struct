@@ -167,32 +167,49 @@ public class Main {
 //        increment(5);
 
 
-
-
         System.out.println("Какой период времени использовать для расчета? (Spring/Summer/Autumn/Winter/Year):");
-        Scanner b  = new Scanner(System.in);
+        Scanner b = new Scanner(System.in);
         String Nemezes = b.nextLine();
 
-        if(Nemezes.equalsIgnoreCase("Spring")) {
-            countDayInSpring(31,30,31);
-        } else if(Nemezes.equalsIgnoreCase("Summer")) {
-            countDayInSummer(30,31,31);
-        } else if(Nemezes.equalsIgnoreCase("Autumn")) {
-            countDayInAutumn(30,31,30);
-        } else if(Nemezes.equalsIgnoreCase("Winter")) {
-            countDayInWinter(31,31,28);
-        }
+        if (Nemezes.equalsIgnoreCase("Spring")) {
+            countDayInSpring(31, 30, 31);
+        } else if (Nemezes.equalsIgnoreCase("Summer")) {
+            countDayInSummer(30, 31, 31);
+        } else if (Nemezes.equalsIgnoreCase("Autumn")) {
+            countDayInAutumn(30, 31, 30);
+        } else if (Nemezes.equalsIgnoreCase("Year") || Nemezes.equalsIgnoreCase("Winter")) {
 
+            System.out.println("Год высокосный? (YES/NO):");
+            String ansver = b.nextLine();
+            b.close();
 
-        System.out.println("Год высокосный? (YES/NO):");
-        String ansver = b.nextLine();
-        b.close();
-
-        if(ansver.equalsIgnoreCase("NO")) {
-            countDayInYear(31,28,31,30,31,30,31,31,30,31,30,31);
-        } else if(ansver.equalsIgnoreCase("YES")) {
-            countDayInYear(31,29,31,30,31,30,31,31,30,31,30,31);
+            if (ansver.equalsIgnoreCase("NO")) {
+                if(Nemezes.equalsIgnoreCase("Year")) {
+                    countDayInYear(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+                } else {
+                    countDayInWinter(31,31,28);
+                }
+            } else if (ansver.equalsIgnoreCase("YES")) {
+                if(Nemezes.equalsIgnoreCase("Year")) {
+                    countDayInYear(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+                } else {
+                    countDayInWinter(31,31,29);
+                }
+            } else System.out.println("Неверный ответ!");
         } else System.out.println("Неверный ответ!");
+
+
+
+//          System.out.println("Год высокосный? (YES/NO):");
+//          String ansver = b.nextLine();
+//          b.close();
+
+//        if(ansver.equalsIgnoreCase("NO")) {
+//            countDayInYear(31,28,31,30,31,30,31,31,30,31,30,31);
+//        } else if(ansver.equalsIgnoreCase("YES")) {
+//            countDayInYear(31,29,31,30,31,30,31,31,30,31,30,31);
+//       } else System.out.println("Неверный ответ!");
+
 
 
 
