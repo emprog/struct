@@ -131,6 +131,29 @@ public class Main {
         return a;
     }
 
+    public static String getAnsver() {
+        Scanner in = new Scanner(System.in);
+        String ansver = in.nextLine();
+//        in.close();
+        return ansver;
+    }
+
+    public static void selectYearOrWinterShort(String season) {
+        if(season.equalsIgnoreCase("Year")) {
+            countDayInYear(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+        } else {
+            countDayInWinter(31,31,28);
+        }
+    }
+
+    public static void selectYearOrWinterLong(String season) {
+        if(season.equalsIgnoreCase("Year")) {
+            countDayInYear(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+        } else {
+            countDayInWinter(31,31,29);
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -166,35 +189,26 @@ public class Main {
 
 //        increment(5);
 
+        
 
         System.out.println("Какой период времени использовать для расчета? (Spring/Summer/Autumn/Winter/Year):");
-        Scanner b = new Scanner(System.in);
-        String Nemezes = b.nextLine();
+        String season = getAnsver();
 
-        if (Nemezes.equalsIgnoreCase("Spring")) {
+        if (season.equalsIgnoreCase("Spring")) {
             countDayInSpring(31, 30, 31);
-        } else if (Nemezes.equalsIgnoreCase("Summer")) {
+        } else if (season.equalsIgnoreCase("Summer")) {
             countDayInSummer(30, 31, 31);
-        } else if (Nemezes.equalsIgnoreCase("Autumn")) {
+        } else if (season.equalsIgnoreCase("Autumn")) {
             countDayInAutumn(30, 31, 30);
-        } else if (Nemezes.equalsIgnoreCase("Year") || Nemezes.equalsIgnoreCase("Winter")) {
+        } else if (season.equalsIgnoreCase("Year") || season.equalsIgnoreCase("Winter")) {
 
             System.out.println("Год высокосный? (YES/NO):");
-            String ansver = b.nextLine();
-            b.close();
+            String ansver = getAnsver();
 
             if (ansver.equalsIgnoreCase("NO")) {
-                if(Nemezes.equalsIgnoreCase("Year")) {
-                    countDayInYear(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-                } else {
-                    countDayInWinter(31,31,28);
-                }
+                selectYearOrWinterShort(season);
             } else if (ansver.equalsIgnoreCase("YES")) {
-                if(Nemezes.equalsIgnoreCase("Year")) {
-                    countDayInYear(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-                } else {
-                    countDayInWinter(31,31,29);
-                }
+                selectYearOrWinterLong(season);
             } else System.out.println("Неверный ответ!");
         } else System.out.println("Неверный ответ!");
 
